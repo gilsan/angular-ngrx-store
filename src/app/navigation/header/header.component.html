@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <div>
+      <button mat-icon-button (click)="onSideNavToggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+
+    <div fxFlex fxLayout fxLayoutAlign="flex-end"fxHide.gt-ls fxHide.lt-sm fxHide.lt-md>
+      <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+             <li *ngIf="isLoggedIn$  | async"><a>수업</a></li>
+             <li *ngIf="isLoggedOut$ | async" ><a  [routerLink]="['/ngrxstore','login']">로그인</a></li>
+             <li *ngIf="isLoggedIn$  | async"  (click)="logout()" style="cursor:pointer">로그아웃</li>
+
+      </ul>
+    </div>
+
+
+</mat-toolbar>

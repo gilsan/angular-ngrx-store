@@ -1,0 +1,35 @@
+
+<div class="courses-panel">
+
+    <h2 class="title">전체과정</h2>
+
+    <div class="counters">
+        <p>레벨수: {{promoTotal$ | async}}</p>
+    </div>
+
+    <mat-tab-group>
+
+        <mat-tab label="초급과정">
+
+            <courses-card-list
+                    [courses]="beginnerCourses$ | async">
+
+            </courses-card-list>
+
+        </mat-tab>
+
+        <mat-tab label="고급과정">
+
+            <courses-card-list
+                    [courses]="advancedCourses$ | async"
+
+            ></courses-card-list>
+
+        </mat-tab>
+
+    </mat-tab-group>
+
+
+
+</div>
+
